@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11 DAYS - Secrets of the Lake</title>
+
+  <!-- Font macchina da scrivere -->
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      font-family: 'Special Elite', monospace;
+      text-align: center;
+    }
+
+    .container {
+      min-height: 100vh;
+      min-height: 100svh;
+      min-height: 100dvh;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* contenuto verso l'alto */
+      padding-top: 40px; /* distanza dal top desktop */
+    }
+
+    /* IMMAGINE CON MICRO-ZOOM */
+    .hero-img {
+      width: 100%;
+      max-width: 1920px;
+      height: auto;
+      animation: fadeIn 3s ease, zoomIn 15s ease-in-out infinite alternate; /* zoom più veloce */
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+
+    .contact-btn {
+      margin-top: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: clamp(8px, 1.2vw, 14px);
+      letter-spacing: 2px;
+      border-bottom: 1px solid white;
+      
+      opacity: 0;
+      animation: fadeInButton 2s ease forwards;
+      animation-delay: 1.5s;
+    }
+
+    .contact-btn:hover {
+      opacity: 0.6;
+    }
+
+    .copyright {
+      margin-top: 40px; /* staccata di una riga dal bottone */
+      color: white;
+      font-size: clamp(6px, 1vw, 12px); /* più piccolo del bottone */
+      font-weight: normal;
+      text-decoration: none;
+      opacity: 0;
+      animation: fadeInButton 2s ease forwards;
+      animation-delay: 2.5s; /* appare subito dopo il bottone */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInButton {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero-img {
+        width: 160%;   /* crop maggiore per mobile */
+        max-width: none;
+      }
+
+      .container {
+        padding-top: 20px; /* meno spazio in alto su mobile */
+      }
+
+      .contact-btn {
+        margin-top: 15px;
+      }
+
+      .copyright {
+        margin-top: 20px; /* meno spazio su mobile */
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <img src="background.jpg" alt="11 Days" class="hero-img">
+
+    <a 
+      href="mailto:info@olocreativefarm.com?subject=11%20DAYS%20-%20Secrets%20of%20the%20Lake"
+      class="contact-btn">
+      Contact us
+    </a>
+
+    <div class="copyright">
+      Deposited at WGA. Copyright © 2019 OLO creative farm Srl. All rights reserved.
+    </div>
+  </div>
+
+</body>
+</html>
